@@ -15,6 +15,10 @@ class Vehiculo {
         echo "Marca: $this->marca<br>";
         echo "Color: $this->color<br>";
     }
+
+    public function getPlaca() {
+        return $this->placa;
+    }
 }
 
 class Carro extends Vehiculo {
@@ -69,12 +73,15 @@ class Parqueadero {
     }
 }
 
-
 $parqueadero = new Parqueadero();
+$vehiculo1 = new Carro("ABC123", "Toyota", "Rojo", 4);
+$vehiculo2 = new Carro("CGZ456", "Audi", "Blanco", 5);
+$vehiculo3 = new Carro("DFR789", "Acura", "Negro", 3);
+$vehiculo4 = new Carro("FGH321", "Nissan", "Gris", 3);
+$vehiculo5 = new Carro("AVG465", "Chevrolet", "Azul", 4);
 
-$vehiculoBuscado = $parqueadero->buscarVehiculo("ABC123");
-if ($vehiculoBuscado) {
-    $vehiculoBuscado->mostrarInformacion();
-} else {
-    echo "Vehículo no encontrado.";
-}
+$vehiculo1->mostrarInformacion();
+$vehiculo2->mostrarInformacion();
+$vehiculo3->mostrarInformacion();
+$vehiculo4->mostrarInformacion();
+$vehiculo5->mostrarInformacion();
